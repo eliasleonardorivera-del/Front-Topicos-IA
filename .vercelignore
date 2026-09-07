@@ -1,0 +1,5 @@
+# Streamlit belongs to Streamlit Community Cloud, not to the static Vercel deployment.
+app.py
+requirements.txt
+__pycache__/
+*.pyc
