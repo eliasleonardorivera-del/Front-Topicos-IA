@@ -1,0 +1,41 @@
+/* Entrance transmissions */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(38px); transition: opacity .75s ease, transform .75s cubic-bezier(.2,.8,.2,1); }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+  .night-shot.reveal { clip-path: inset(0 100% 0 0); transform: none; transition: clip-path 1.15s steps(8); }
+  .night-shot.reveal.is-visible { clip-path: inset(0); }
+  .crew-cards .card.reveal:nth-child(2) { transition-delay: .5s; }
+  .crew-cards .card.reveal:nth-child(3) { transition-delay: 1s; }
+}
+
+/* HUD */
+.nav-links a { position: relative; padding: 9px 0; transition: color .25s ease; }
+.nav-links a.active { color: var(--cyan); }
+.nav-links a.active::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--pink); box-shadow: 0 0 9px var(--pink); }
+.side-index { transition: color .25s ease; }
+.side-index.is-updating { color: var(--pink); }
+
+/* Depth layers */
+.moon-scene, .skyline { will-change: transform; }
+
+/* Interactive character cards */
+.character-card { cursor: pointer; isolation: isolate; transition: border-color .3s ease, box-shadow .3s ease, transform .3s ease; }
+.character-card > img { transition: transform 1.2s cubic-bezier(.2,.8,.2,1), filter .4s ease; }
+.character-card:hover, .character-card:focus-visible { border-color: var(--cyan); box-shadow: 0 0 22px #44f1ff8a, inset 0 0 28px #ff346f33; outline: none; transform: translateY(-7px); }
+.character-card:hover > img, .character-card:focus-visible > img { transform: scale(1.1); filter: saturate(1.35) contrast(1.1); }
+.character-card:hover h3, .character-card:focus-visible h3 { animation: glitch .32s steps(2) infinite; }
+.card-intel { position: absolute; z-index: 2; left: 24px; right: 24px; bottom: 20px; padding: 12px 0 0; border-top: 1px solid var(--cyan); color: #ecfbff; font-size: 9px; line-height: 1.8; letter-spacing: .5px; opacity: 0; transform: translateY(15px); transition: .3s ease; background: linear-gradient(90deg, #080914e8, transparent); }
+.character-card:hover .card-intel, .character-card:focus-visible .card-intel { opacity: 1; transform: translateY(0); }
+.character-card:hover > span, .character-card:focus-visible > span { opacity: 0; }
+@keyframes glitch { 0%,100% { text-shadow: 3px 0 var(--cyan), -3px 0 var(--pink); transform: translate(0); } 30% { transform: translate(-2px,1px); } 60% { transform: translate(2px,-1px); } }
+
+/* Profile drawer */
+.character-drawer { position: fixed; z-index: 20; top: 0; right: 0; width: min(440px, 100%); height: 100dvh; padding: 90px 42px 42px; background: linear-gradient(145deg,#11122a,#080914); border-left: 1px solid var(--cyan); box-shadow: -20px 0 50px #0009; transform: translateX(105%); transition: transform .4s cubic-bezier(.2,.8,.2,1); }
+.character-drawer.active { transform: translateX(0); }
+.close-drawer { position: absolute; top: 22px; right: 28px; border: 0; background: none; color: var(--cyan); font-size: 34px; cursor: pointer; }
+.drawer-kicker { color: var(--pink); font-size: 10px; letter-spacing: 1.5px; }.drawer-name { font: 800 clamp(60px,10vw,105px)/.78 'Barlow Condensed'; margin: 20px 0; }.drawer-role { color: var(--acid); font-size: 12px; }.drawer-stats { margin: 38px 0; border-top: 1px solid #ffffff36; }.drawer-stats div { display:flex; justify-content:space-between; gap:16px; padding:14px 0; border-bottom:1px solid #ffffff24; font-size:10px; }.drawer-stats dt { color:#8c8a9c; }.drawer-stats dd { margin:0; text-align:right; color:var(--cyan); }.drawer-quote { margin: 0; padding: 18px 0 0 18px; border-left: 2px solid var(--pink); color:#f2f1f7; font: 600 22px/1.05 'Barlow Condensed'; }
+
+/* The actual "moment" */
+.modal .moment-content { max-width: 940px; padding: 0; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; text-align: left; }.moment-content img { display:block; width:100%; height:100%; min-height:410px; object-fit:cover; }.moment-content > div { padding:48px; align-self:center; }.moment-content h2 { font-size:clamp(55px,6vw,90px); }.moment-content span { display:block; margin-top:30px; color:var(--acid); font-size:9px; letter-spacing:1px; }
+
+@media (max-width: 700px) { .card-intel { left:18px; right:18px; }.modal .moment-content { grid-template-columns: 1fr; margin: 20px; }.moment-content img { min-height:260px; max-height:360px; }.moment-content > div { padding:30px; }.character-drawer { padding:75px 28px 28px; } }

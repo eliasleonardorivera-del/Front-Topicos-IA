@@ -1,0 +1,35 @@
+.streamlit-terminal {
+  margin-top: 110px;
+  padding-top: 55px;
+  border-top: 1px solid #ffffff2e;
+}
+
+.terminal-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 35px;
+  margin: 42px 0 28px;
+}
+
+.terminal-heading h2 {
+  font: 800 clamp(54px, 6vw, 92px)/.8 'Barlow Condensed', sans-serif;
+  letter-spacing: -2px;
+  margin: 0 0 18px;
+}
+
+.terminal-heading h2 em { color: var(--acid); font-style: normal; text-shadow: 2px 0 var(--cyan); }
+.terminal-heading p { max-width: 520px; color: #b9b8c3; font-size: 12px; line-height: 1.8; margin: 0; }
+.terminal-status { align-self: center; color: var(--acid); font-size: 9px; letter-spacing: 1px; white-space: nowrap; }
+.streamlit-frame-wrap { position: relative; min-height: 690px; border: 1px solid #44f1ff9c; background: #090a16; box-shadow: 16px 16px 0 #ff346f3d, 0 0 35px #44f1ff24; overflow: hidden; }
+.streamlit-frame { position: relative; z-index: 1; width: 100%; min-height: 690px; border: 0; background: #090a16; }
+.streamlit-fallback { position: absolute; inset: 0; display: grid; place-content: center; gap: 12px; text-align: center; color: #a2a1af; font: 11px/1.8 'Space Mono', monospace; background: radial-gradient(circle at center, #162139, #090a16 65%); }
+.streamlit-fallback code { color: var(--cyan); font-size: 12px; }
+.streamlit-frame:not([src=""]) + .streamlit-fallback { z-index: 0; }
+
+@media (max-width: 700px) {
+  .streamlit-terminal { margin-top: 70px; }
+  .terminal-heading { display: block; margin-top: 30px; }
+  .terminal-status { display: block; margin-top: 22px; }
+  .streamlit-frame-wrap, .streamlit-frame { min-height: 760px; }
+}

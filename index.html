@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080914" />
+    <title>EDGERUNNERS // LUNA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="image-overrides.css" />
+    <link rel="stylesheet" href="interactions.css" />
+    <link rel="stylesheet" href="terminal.css" />
+  </head>
+  <body>
+    <div class="grain"></div>
+    <div class="scanlines"></div>
+
+    <nav class="nav">
+      <a class="brand" href="#inicio"><span>EDGERUNNERS</span><i>//</i> 2077</a>
+      <div class="nav-links">
+        <a href="#historia" data-nav="historia">HISTORIA</a>
+        <a href="#tripulacion" data-nav="tripulacion">TRIPULACIÓN</a>
+        <button class="sound-toggle" aria-label="Activar música"><span class="equalizer">▮▮▮</span> AUDIO</button>
+      </div>
+    </nav>
+
+    <main id="inicio">
+      <section class="hero active-section" data-hud="01">
+        <div class="video-backdrop" aria-hidden="true">
+          <iframe
+            title="Video ambiental de Night City"
+            id="hero-video"
+            src="https://www.youtube.com/embed/KvMY1uzSC1E?autoplay=1&mute=1&controls=0&loop=1&playlist=KvMY1uzSC1E&playsinline=1&rel=0&modestbranding=1"
+            allow="autoplay; encrypted-media"
+            referrerpolicy="strict-origin-when-cross-origin"
+          ></iframe>
+        </div>
+        <div class="skyline" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="moon-scene" aria-label="La luna sobre Night City">
+          <img class="moon-memory" src="assets/moon-memory.png" alt="David y Lucy contemplando la Tierra desde la Luna" />
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow">NETFLIX ORIGINAL ANIMATION <span>_</span> 2076</p>
+          <h1>NO QUISE<br /><em>DESVANECERME</em><br />CONTIGO.</h1>
+          <p class="intro">En una ciudad que lo devora todo, dos almas intentan llegar más allá de las luces de neón.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#historia">INICIAR TRANSMISIÓN <b>→</b></a>
+            <button class="button ghost trailer">▶ VER EL MOMENTO</button>
+          </div>
+        </div>
+        <div class="side-index">01 <span></span> 04</div>
+        <div class="scroll-note">DESLIZA PARA EXPLORAR <span>↓</span></div>
+      </section>
+
+      <section class="story" id="historia" data-hud="02">
+        <div class="section-label"><span>01</span> ARCHIVO DE HISTORIA</div>
+        <div class="story-grid">
+          <h2>UNA HISTORIA<br />ESCRITA EN<br /><em>ESTRELLAS.</em></h2>
+          <div class="story-copy">
+            <p>Night City es una promesa bañada en cromo: si tienes suficiente dinero, puedes ser quien quieras. David Martínez sólo quería sobrevivir a ella.</p>
+            <p>Tras perderlo todo, entra en el mundo de los edgerunners —mercenarios fuera de la ley que persiguen el próximo gran golpe— y conoce a Lucy, una netrunner con un único sueño: escapar de este mundo y pisar la Luna.</p>
+            <div class="quote">"TODOS QUIEREN LLEGAR A LA CIMA. YO SÓLO QUIERO LLEGAR A LA LUNA."</div>
+          </div>
+        </div>
+        <div class="data-row"><span>GÉNERO <b>ACCIÓN / CYBERPUNK</b></span><span>ESTADO <b class="pink">SEÑAL ACTIVA</b></span><span>ARCHIVO <b>NC-2076-ER</b></span></div>
+        <figure class="night-shot">
+          <img src="assets/night-city-lounge.png" alt="David y Lucy en un apartamento con vista a Night City" />
+          <figcaption>REGISTRO VISUAL // NIGHT CITY // DESPUÉS DE MEDIANOCHE</figcaption>
+        </figure>
+      </section>
+
+      <section class="crew" id="tripulacion" data-hud="03">
+        <div class="section-label"><span>02</span> CONTACTOS PRINCIPALES</div>
+        <div class="crew-cards">
+          <article class="card david character-card" data-character="david" tabindex="0"><img src="assets/david.png" alt="David Martínez" /><p>SUJETO 01</p><h3>DAVID<br /><em>MARTÍNEZ</em></h3><span>EL CORREDOR</span><div class="card-intel">ROL // EDGERUNNER<br />IMPLANTE // SANDY<br />ESTADO // AL LÍMITE</div></article>
+          <article class="card lucy character-card" data-character="lucy" tabindex="0"><img src="assets/lucy.png" alt="Lucy Kushinada" /><p>SUJETO 02</p><h3>LUCY<br /><em>KUSHINADA</em></h3><span>LA NETRUNNER</span><div class="card-intel">ROL // NETRUNNER<br />IMPLANTE // CYBERDECK<br />ESTADO // EN RUTA</div></article>
+          <article class="card moon-card character-card" data-character="moon" tabindex="0"><p>DESTINO</p><h3>LA<br /><em>LUNA</em></h3><span>SIEMPRE ESTUVO AHÍ</span><div class="card-intel">SECTOR // ÓRBITA<br />DISTANCIA // 384,400 KM<br />ESTADO // PROMESA</div></article>
+        </div>
+        <section class="references" aria-labelledby="references-title" data-hud="04">
+          <div class="section-label"><span>03</span> REFERENCIAS DE HISTORIA</div>
+          <div class="references-grid">
+            <div class="reference-copy">
+              <h2 id="references-title">MÁS ALLÁ<br />DE <em>NIGHT CITY.</em></h2>
+              <p>Entre encargos, pérdidas y modificaciones, David encuentra en Lucy algo más importante que sobrevivir: una razón para seguir mirando hacia arriba.</p>
+              <ul>
+                <li><b>EL SUEÑO:</b> Lucy desea abandonar Night City y llegar a la Luna.</li>
+                <li><b>EL PRECIO:</b> Cada mejora acerca a David a la leyenda y al límite.</li>
+                <li><b>EL RECUERDO:</b> Su promesa sigue viva entre neón, polvo lunar y estrellas.</li>
+              </ul>
+            </div>
+            <figure class="memory-card">
+              <img src="assets/david-lucy-memory.png" alt="Lucy y David compartiendo un momento juntos" />
+              <figcaption>ARCHIVO PERSONAL // RECUERDO RECUPERADO</figcaption>
+            </figure>
+          </div>
+        </section>
+        <section class="streamlit-terminal" aria-labelledby="terminal-title">
+          <div class="section-label"><span>05</span> TERMINAL DE INTELIGENCIA</div>
+          <div class="terminal-heading">
+            <div><h2 id="terminal-title">DATOS<br /><em>RECUPERADOS.</em></h2><p>Explora la cronología, perfiles y archivos de Night City en tiempo real.</p></div>
+            <span class="terminal-status">● ENLACE LOCAL ACTIVO</span>
+          </div>
+          <div class="streamlit-frame-wrap">
+            <iframe class="streamlit-frame" src="http://localhost:8501/?embed=true" title="Terminal Streamlit de Edgerunners" loading="lazy"></iframe>
+            <div class="streamlit-fallback">INICIA STREAMLIT PARA CONECTAR EL TERMINAL:<br /><code>streamlit run app.py</code></div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer><span>© 2077 NIGHT CITY ARCHIVES</span><span>MADE TO RUN AT THE EDGE</span></footer>
+
+    <div class="music-panel" aria-hidden="true">
+      <button class="close-music" aria-label="Cerrar música">×</button>
+      <p>SEÑAL DE AUDIO // AMBIENTE</p>
+      <p class="audio-status">EL VIDEO YA SE ESTÁ REPRODUCIENDO EN LA PORTADA.</p>
+      <button class="button primary unmute-video">ACTIVAR SONIDO <b>↗</b></button>
+      <small>Por seguridad, el audio necesita una interacción tuya para comenzar.</small>
+    </div>
+    <aside class="character-drawer" aria-hidden="true">
+      <button class="close-drawer" aria-label="Cerrar perfil">×</button>
+      <p class="drawer-kicker">ARCHIVO DE PERSONAJE</p>
+      <h2 class="drawer-name"></h2>
+      <p class="drawer-role"></p>
+      <dl class="drawer-stats"></dl>
+      <blockquote class="drawer-quote"></blockquote>
+    </aside>
+    <div class="modal" aria-hidden="true"><button class="close-modal" aria-label="Cerrar momento">×</button><div class="moment-content"><img src="assets/david-lucy-memory.png" alt="David y Lucy compartiendo un momento" /><div><p>TRANSMISIÓN // MOMENTO RECUPERADO</p><h2>EL SUEÑO<br />DE LUCY</h2><p>Una promesa que nació en Night City y mira hacia la Luna. La señal no se pierde: sólo sigue viajando.</p><span>ARCHIVO NC-2076 // REPRODUCCIÓN ACTIVA</span></div></div></div>
+    <script src="script.js"></script>
+  </body>
+</html>
