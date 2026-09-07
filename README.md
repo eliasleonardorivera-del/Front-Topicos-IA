@@ -56,6 +56,24 @@ Accede a [http://localhost:8000](http://localhost:8000). La landing carga el pan
 
 Detén cualquier servidor con `Ctrl + C`.
 
+## ☁️ Despliegue en Render
+
+Este proyecto está preparado para desplegar la landing y Streamlit juntos en un único servicio de Render. El contenedor sirve la página en `/` y el panel Streamlit en `/terminal/`, por lo que no hay que cambiar URLs manualmente después de publicar.
+
+1. Sube los cambios al repositorio:
+
+   ```powershell
+   git add .
+   git commit -m "Add Render deployment configuration"
+   git push
+   ```
+
+2. En [Render](https://render.com/), selecciona **New → Blueprint**.
+3. Conecta el repositorio `Front-Topicos-IA` y confirma el archivo `render.yaml`.
+4. Pulsa **Apply**. Render construirá el `Dockerfile` y entregará una URL con el formato `https://edgerunners-luna.onrender.com`.
+
+Render asigna el puerto público `10000`; Nginx lo recibe y redirige internamente `/terminal/` hacia Streamlit. En planes gratuitos, el servicio puede entrar en reposo tras un período sin visitas y tardará un momento en reactivarse.
+
 ## 💻 Usar Live Server
 
 1. Instala la extensión **Live Server** en VS Code  
@@ -82,6 +100,9 @@ Detén cualquier servidor con `Ctrl + C`.
 frotn/
 ├── app.py                 # Panel Streamlit
 ├── requirements.txt       # Dependencias Python
+├── Dockerfile             # Contenedor único para Render
+├── render.yaml            # Configuración de despliegue Render
+├── docker/                # Nginx + Supervisor para landing y Streamlit
 ├── index.html             # Landing principal
 ├── styles.css             # Estilos base y responsive
 ├── image-overrides.css    # Estilos para imágenes locales

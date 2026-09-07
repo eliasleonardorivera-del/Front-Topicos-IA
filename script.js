@@ -10,6 +10,11 @@ const sideIndex = document.querySelector('.side-index');
 const navLinks = document.querySelectorAll('[data-nav]');
 const drawer = document.querySelector('.character-drawer');
 const closeDrawer = document.querySelector('.close-drawer');
+const streamlitFrame = document.querySelector('.streamlit-frame');
+
+if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+  streamlitFrame.src = 'http://localhost:8501/?embed=true';
+}
 
 const profiles = {
   david: { name: 'DAVID<br><em>MARTÍNEZ</em>', role: 'EDGERUNNER // EL CORREDOR', stats: [['ROL', 'MERCENARIO'], ['IMPLANTE', 'SANDEVISTAN'], ['ESTADO', 'AL LÍMITE']], quote: '"No importa lo que pase. Siempre voy a llevarte a la Luna."' },

@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: edgerunners-luna
+    runtime: docker
+    plan: free
+    healthCheckPath: /
